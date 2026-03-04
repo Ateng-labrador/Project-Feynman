@@ -7,10 +7,15 @@
     <title>{{judul}}</title>
     {% include "snippets/styles.html" %}
 
+    {% block app_css %}
+        <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    {% endblock app_css %}
+
     {% include "snippets/navbar.html" %}
-    
 </head>
 <body>
+
+    
     {% include "snippets/scripts.html" %}
 
 </body>

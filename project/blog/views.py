@@ -6,4 +6,4 @@ def index(request):
         'judul' : 'Blog',
         'subjudul' : 'Selamat Datang',
     }
-    return render(request, 'blog/index.html', context)
+    return render(request, 'base.html', context)
