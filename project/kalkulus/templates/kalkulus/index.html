@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{judul}}</title>
+    {% include "snippets/styles.html" %}
+
+    {% block app_css %}
+        <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    {% endblock app_css %}
+
+    {% include "snippets/navbar.html" %}
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Kalkulus</h1>
+            <h3>Isi Konten Kalkulus</h3>
+            <p>Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Quisquam aliquam dolore
+                animi, nemo iure itaque perspiciatis!
+                Repellat quibusdam, qui, minima fugit error
+                doloribus magni a adipisci consectetur alias
+                repudiandae quae.</p>
+        </div>
+    </div>
+    
+    {% include "snippets/scripts.html" %}
+</body>
+</html>

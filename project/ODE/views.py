@@ -5,4 +5,4 @@ def index(request):
     context = {
         'judul' : 'PDB - Ryman Project'
     }
-    return render(request, 'base.html', context)
+    return render(request, 'ODE/index.html', context)

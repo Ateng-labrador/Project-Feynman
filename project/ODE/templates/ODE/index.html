@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{judul}}</title>
+    {% include "snippets/styles.html" %}
+
+    {% block app_css %}
+        <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    {% endblock app_css %}
+
+    {% include "snippets/navbar.html" %}
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Persamaan Diferensial Biasa (PDP)</h1>
+            <h3>Isi Konten PDP</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Debitis repudiandae
+                amet explicabo delectus laborum, natus
+                nemo autem aspernatur eius omnis esse
+                perspiciatis nam nesciunt nobis illo,
+                cumque, nisi officia repellat..</p>
+        </div>
+    </div>
+    
+    {% include "snippets/scripts.html" %}
+</body>
+</html>

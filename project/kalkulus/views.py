@@ -5,4 +5,4 @@ def index(request):
     context = {
         'judul' : 'Kalkulus - Ryman Project'
     }
-    return render(request, 'base.html', context)
+    return render(request, 'kalkulus/index.html', context)
