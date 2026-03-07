@@ -24,6 +24,11 @@
                 Repellat quibusdam, qui, minima fugit error
                 doloribus magni a adipisci consectetur alias
                 repudiandae quae.</p>
+            
+                {% for post in Posts %}
+                    <h3>{{post.title}}</h3>
+                    <p>{{post.body}}</p>
+                {% endfor %}
         </div>
     </div>
     
