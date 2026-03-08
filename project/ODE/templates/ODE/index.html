@@ -16,14 +16,12 @@
 <body>
     <div class="container">
         <div class="content">
-            <h1>Persamaan Diferensial Biasa (PDP)</h1>
+            <h1 id="Text_title">Persamaan Diferensial Biasa (PDP)</h1>
             <h3>Isi Konten PDP</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur
-                adipisicing elit. Debitis repudiandae
-                amet explicabo delectus laborum, natus
-                nemo autem aspernatur eius omnis esse
-                perspiciatis nam nesciunt nobis illo,
-                cumque, nisi officia repellat..</p>
+            {% for post in Posts %}
+                <h3>{{post.title}}</h3>
+                <p>{{post.body}}</p>
+            {% endfor %}
         </div>
     </div>
     
