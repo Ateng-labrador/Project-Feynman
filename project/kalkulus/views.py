@@ -9,6 +9,7 @@ def index(request):
     context = {
         'judul' : 'Kalkulus - Ryman Project',
         'Posts': posts,
+        'category' : 'Kalkulus',
 
     }
     return render(request, 'kalkulus/index.html', context)

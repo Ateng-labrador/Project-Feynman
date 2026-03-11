@@ -6,6 +6,7 @@ def index(request):
     posts = Post.objects.all()
     context = {
         'judul' : 'PDB - Ryman Project',
-        'Posts' : posts
+        'Posts' : posts,
+        'category' : 'Persamaan Diferensial Biasa'
     }
     return render(request, 'ODE/index.html', context)
