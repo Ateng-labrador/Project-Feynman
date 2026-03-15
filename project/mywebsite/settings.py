@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'kalkulus',
     'ODE',
     'PDE',
+    'latihan',
 ]
 
 MIDDLEWARE = [
