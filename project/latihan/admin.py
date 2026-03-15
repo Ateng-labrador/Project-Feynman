@@ -10,4 +10,4 @@ class PostAdmin(admin.ModelAdmin):
         'update',
     ]
 
-admin.site.register(Post)
+admin.site.register(Post, PostAdmin)

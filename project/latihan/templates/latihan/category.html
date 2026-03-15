@@ -1,1 +1,26 @@
 {% extends "base.html" %}
+
+{% block content %}
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/latihan" title="">
+                All-post
+            </a>
+        </li>
+    {% for dataCategory in Categories %}
+        <li class="nav-item">
+            <a class = "nav-link" href="/latihan/category/{{dataCategory.category}}">
+                {{dataCategory.category}}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    {% for post in posts %}
+        <a href="/latihan/post/{{post.slug}}" title="">
+            <h1>{{post.judul}}</h1>
+        </a>
+        <p>{{post.publish}}</p>
+    {% endfor %}
+{% endblock content %}
+

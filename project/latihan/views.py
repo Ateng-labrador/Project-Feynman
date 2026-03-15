@@ -11,7 +11,7 @@ def index(request):
     categories = Post.objects.values('category').distinct()
     context = {
         'judul' :'Latihan- Ryman Project',
-        'Category' : categories,
+        'Categories' : categories,
         'Posts' : posts
     }
     return render(request,  'latihan/index.html', context)
@@ -21,7 +21,7 @@ def categoryPost(request, categoryInput):
     categories = Post.objects.values('category').distinct()
     context = {
         'judul' : 'Ryman Project',
-        'categories' : categories,
+        'Categories' : categories,
         'posts' : posts,
     }
     return render(request, 'latihan/category.html', context)
