@@ -10,3 +10,11 @@ def index(request):
         'category' : 'Persamaan Diferensial Biasa'
     }
     return render(request, 'ODE/index.html', context)
+
+
+def categoryPost(request, categoryInput):
+    pass
+
+
+def detailPost(request, slugInput):
+    pass
