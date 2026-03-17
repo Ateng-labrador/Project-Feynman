@@ -4,12 +4,33 @@ from django.shortcuts import render
 from .models import Post
 
 def index(request):
-    # queryset
     posts = Post.objects.all()
+    categories = Post.objects.values('category').distinct()
     context = {
         'judul' : 'Kalkulus - Ryman Project',
+        'Categories' : categories,
         'Posts': posts,
-        'category' : 'Kalkulus',
-
     }
     return render(request, 'kalkulus/index.html', context)
+
+
+def categoryPost(request, categoryInput):
+    posts = Post.objects.filter(category = categoryInput)
+    categories = Post.objects.values('category').distinct()
+    context = {
+        'judul' : 'Kalkulus - Ryman Project',
+        'Categories' : categories,
+        'Posts' : posts,
+    }
+    return render(request, 'kalkulus/category.html', context)
+
+
+def detailPost(request, slugInput):
+    posts = Post.objects.filter(slug=slugInput)
+    categories = Post.objects.values('category').distinct()
+    context = {
+        'judul' : 'Kalkulus - Rymann Project',
+        'Categories' : categories,
+        'Posts' : posts,
+    }
+    return render(request, 'kalkulus/detail.html', context)

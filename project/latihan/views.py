@@ -20,7 +20,7 @@ def categoryPost(request, categoryInput):
     posts = Post.objects.filter(category=categoryInput)
     categories = Post.objects.values('category').distinct()
     context = {
-        'judul' : 'Ryman Project',
+        'judul' : 'Latihan - Ryman Project',
         'Categories' : categories,
         'posts' : posts,
     }
@@ -31,7 +31,7 @@ def detailPost(request, slugInput):
     posts = Post.objects.get(slug=slugInput)
     categories = Post.objects.values('category').distinct()
     context = {
-        'judul' : 'Ryman Project',
+        'judul' : 'Latihan - Ryman Project',
         'categories' : categories,
         'posts' : posts,
     }

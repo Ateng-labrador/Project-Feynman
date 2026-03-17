@@ -16,15 +16,11 @@
     {% endfor %}
     </ul>
 
-
     {% for post in Posts %}
-        <p><b>{{post.category}}</b></p>
-        <a href="/kalkulus/post/{{post.slug}}" title="">
+        <a href="/latihan/post/{{post.slug}}" title="">
             <h1>{{post.judul}}</h1>
         </a>
         <p>{{post.publish}}</p>
-        <p>{{post.body| truncatechars:200}}</p>
     {% endfor %}
 {% endblock content %}
-
 
