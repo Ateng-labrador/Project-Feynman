@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block contents %}
+    <p>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/latihan">
+                    all-post
+                </a>
+            </li>
+            {% for category in Category %}
+                <li class="nav-item">
+                    <a class="nav-link" href="../{{category.category}}">{{category.category}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </p>
+
+    <p>Semua post di kategori : {{Posts}}</p>
+
+    {% for post in Posts %}
+        <a href="/latihan/post/{{post.slug}}"><h1>{{post.judul}}</h1></a>
+        <p>{{post.publish}}</p>
+        <p>{{post.publish | truncatechars:200}}</p>
+    {% endfor %}
+{% endblock contents %}
