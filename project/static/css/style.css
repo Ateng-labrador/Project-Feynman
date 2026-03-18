@@ -3,6 +3,14 @@
     padding: 0.75rem 0 !important;
 }
 
+.container1{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 125%;
+    font-style: italic;
+    color: slategrey;
+}
+
 .navbar-expand-lg {
     width: 100%;
 }
