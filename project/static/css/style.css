@@ -3,6 +3,20 @@
     padding: 0.75rem 0 !important;
 }
 
+.link{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.img{
+    float: right; /* atau right */
+    margin-left: 30px; /* Memberi jarak antara gambar dan teks */
+    margin-right: 30px;
+    margin-bottom: 30px;
+    width: 200px; /* Atur ukuran gambar */
+    height: auto;
+}
+
 .container1{
     margin-top: 100px;
     margin-bottom: 100px;
