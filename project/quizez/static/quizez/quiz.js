@@ -12,22 +12,37 @@ $.ajax({
         // console.log(response)
         data = response.data
         data.forEach(el => {
-            for (const [question, answer] of Object.entries(el)){
+            let questionText = ""
+            let answers = []
+            let solutions = []
+            for (const [key, value] of Object.entries(el)){
+                if(key == "solution"){
+                    solutions = value
+                }
+                else{
+                    questionText = key
+                    answers = value
+                }
+            }
                 quizBox.innerHTML += `
                     <hr>
                     <div class="mb-2">
-                        <b>${question}</b>
+                        <b>${questionText}</b>
                     </div>
                 `
-                answer.forEach(answer => {
+                answers.forEach(ans => {
                     quizBox.innerHTML += `
                         <div>
-                            <input type="radio" class="ans" id="${question} - ${answer}" name="${question}" values="${answer}">
-                            <label for="${question}">${answer}</label>
+                            <input type="radio" class="ans" name="${questionText}" value="${ans}">
+                            <label>${ans}</label>
                         </div>
                     `
                 })
-            }
+                solutions.forEach(sol => {
+                    quizBox.innerHTML += `
+                        <div><p>${sol}</p></div>
+                    `
+                })
         });
     },
     error: function(error){

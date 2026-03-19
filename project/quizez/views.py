@@ -19,9 +19,13 @@ def quiz_data_view(request, pk):
     question = []
     for q in quiz.get_questions():
         answers = []
+        solution = []
         for a in q.get_answers():
             answers.append(a.text)
-        question.append({str(q): answers})
+        for s in q.solution_set.all():
+            solution.append(s.text)
+        question.append({str(q): answers,
+                         "solution" : solution})
     return JsonResponse({
         'data': question,
         # 'time': quiz.time,

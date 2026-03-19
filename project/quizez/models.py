@@ -10,6 +10,7 @@ DIFF_CHOICES = (
 
 # Create your models here.
 class Quiz(models.Model):
+    text = models.TextField(blank=True)
     name = models.CharField(max_length=120)
     topic = models.CharField(max_length=120)
     number_of_questions = models.IntegerField()
