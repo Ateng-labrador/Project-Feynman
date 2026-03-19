@@ -1,1 +1,14 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block scripts %}
+    <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <script src="{% static 'quizez/quiz.js' %}" defer></script>
+{% endblock scripts %}
+
+
+{% block content %}
+    <h3>{{obj.name}}</h3>
+    {% csrf_token %}
+    <div id="quiz-box"></div>
+{% endblock content %}
