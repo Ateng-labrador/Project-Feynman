@@ -9,6 +9,7 @@
 
 {% block content %}
     <h3>{{obj.name}}</h3>
+    <p>{{obj.text}}</p>
     {% csrf_token %}
     <div id="quiz-box"></div>
 {% endblock content %}
