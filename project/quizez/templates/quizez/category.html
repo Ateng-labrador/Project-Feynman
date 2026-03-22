@@ -2,25 +2,32 @@
 
 {% block content %}
     <ul class="nav">
+    <!-- General -->
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'quizes:main-view' %}">
+            General
+        </a>
+    </li>
+
+    <!-- Topic dari database -->
+    {% for cat in categories %}
         <li class="nav-item">
-            <a class="nav-link" href="/quizez" title="">
-                All-post
-            </a>
-        </li>
-    {% for dataCategory in Categories %}
-        <li class="nav-item">
-            <a class = "nav-link" href="/quizez/category/{{dataCategory.category}}">
-                #{{dataCategory.category}}
+            <a class="nav-link" href="{% url 'quizes:categoryPost' cat %}">
+                {{ cat }}
             </a>
         </li>
     {% endfor %}
     </ul>
 
-    {% for post in Posts %}
-        <a href="/quizez/post/{{post.slug}}" title="">
-            <h1>{{post.judul}}</h1>
+    {% for obj in posts %}
+    <h3>
+        <a href="{% url 'quizes:quiz-view' obj.pk %}">
+            {{ obj.name }}
         </a>
-        <p>{{post.publish}}</p>
+    </h3>
+    <p>{{ obj.text|truncatechars:200 }}</p>
+    {% empty %}
+        <p>Tidak ada data untuk kategori ini</p>
     {% endfor %}
 {% endblock content %}
 

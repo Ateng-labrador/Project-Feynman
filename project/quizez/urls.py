@@ -15,6 +15,6 @@ urlpatterns = [
     path('', QuizListView.as_view(), name='main-view'),
     path('<int:pk>/', quiz_view, name='quiz-view'),
     path('<int:pk>/data/', quiz_data_view, name='quiz-data-view'),
-    path('category/<slug:categoryInput>/', categoryPost)
+    path('topic/<slug:categoryInput>/', categoryPost, name='categoryPost')
 ]
 

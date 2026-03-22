@@ -9,13 +9,18 @@ class QuizListView(ListView):
     model = Quiz
     template_name = 'quizez/index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Quiz.objects.values_list('topic', flat=True).distinct()
+        return context
+
 
 def categoryPost(request, categoryInput):
-    posts = Quiz.objects.filter(categoryInput)
-    categories = Quiz.objects.values('category').distinct()
+    posts = Quiz.objects.filter(topic=categoryInput)
+    categories = Quiz.objects.values_list('topic', flat=True).distinct()
     context = {
-        'Categories' : categories,
-        'Posts' : posts
+        'categories' : categories,
+        'posts' : posts
     }
     return render(request, 'quizez/category.html', context)
 

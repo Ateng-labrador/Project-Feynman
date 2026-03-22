@@ -19,7 +19,7 @@ class Quiz(models.Model):
     diffcluty = models.CharField(max_length=6, choices=DIFF_CHOICES)
 
     def save(self):
-        self.slug = slugify(self.judul)
+        self.slug = slugify(self.topic)
         super(Quiz, self).save()
 
     def __str__(self):
