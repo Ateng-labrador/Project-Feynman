@@ -15,6 +15,7 @@ $.ajax({
             let questionText = ""
             let answers = []
             let solutions = []
+
             for (const [key, value] of Object.entries(el)){
                 if(key == "solution"){
                     solutions = value
@@ -40,23 +41,23 @@ $.ajax({
                 })
                 solutions.forEach(sol => {
                     quizBox.innerHTML += `
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                            aria-expanded="false" aria-controls="flush-collapseOne">
-                              <b>Solusi</b>
-                            </button>
-                          </h2>
-                          <div id="flush-collapseOne" class="accordion-collapse collapse"
-                          data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                ${sol}
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                        aria-expanded="false" aria-controls="flush-collapseOne">
+                                        <b>Solusi</b>
+                                    </button>
+                                </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        ${sol}
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                    </div>
                     `
                 })
         });

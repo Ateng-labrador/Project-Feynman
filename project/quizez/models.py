@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 import random
 # page for make exam post
 
@@ -14,7 +15,12 @@ class Quiz(models.Model):
     name = models.CharField(max_length=120)
     topic = models.CharField(max_length=120)
     number_of_questions = models.IntegerField()
+    slug = models.SlugField(blank=True, editable=False)
     diffcluty = models.CharField(max_length=6, choices=DIFF_CHOICES)
+
+    def save(self):
+        self.slug = slugify(self.judul)
+        super(Quiz, self).save()
 
     def __str__(self):
         return f"{self.name} - {self.topic}"

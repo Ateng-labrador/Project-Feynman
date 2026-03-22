@@ -17,10 +17,9 @@
     </ul>
 
     {% for post in Posts %}
-        <a href="/latihan/post/{{post.slug}}" title="">
+        <a href="/kalkulus/post/{{post.slug}}" title="">
             <h1>{{post.judul}}</h1>
         </a>
         <p>{{post.publish}}</p>
     {% endfor %}
 {% endblock content %}
-

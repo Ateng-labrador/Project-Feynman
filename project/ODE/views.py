@@ -26,11 +26,11 @@ def categoryPost(request, categoryInput):
 
 
 def detailPost(request, slugInput):
-    posts = Post.objects.filter(slug=slugInput)
+    posts = Post.objects.get(slug=slugInput)
     categories = Post.objects.values('category').distinct()
     context = {
         'judul' : 'ODE - Ryman Project',
         'Categories' : categories,
-        'Posts' : posts,
+        'posts' : posts,
     }
     return render(request, 'ODE/detail.html', context)

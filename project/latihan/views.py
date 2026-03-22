@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from .models import Quiz,Post
+from django.views.generic import ListView
+from django.http import JsonResponse
 
 # slug ada pita link untuk menuju konten
 
-# Create your views here.
-from .models import Post
+# Create your views here. 
 
 def index(request):
     posts = Post.objects.all()

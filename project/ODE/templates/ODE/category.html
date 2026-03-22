@@ -3,13 +3,13 @@
 {% block content %}
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="/latihan" title="">
+            <a class="nav-link" href="/ODE" title="">
                 All-post
             </a>
         </li>
     {% for dataCategory in Categories %}
         <li class="nav-item">
-            <a class = "nav-link" href="/latihan/category/{{dataCategory.category}}">
+            <a class = "nav-link" href="/ODE/category/{{dataCategory.category}}">
                 {{dataCategory.category}}
             </a>
         </li>
@@ -17,7 +17,7 @@
     </ul>
 
     {% for post in posts %}
-        <a href="/latihan/post/{{post.slug}}" title="">
+        <a href="/ODE/post/{{post.slug}}" title="">
             <h1>{{post.judul}}</h1>
         </a>
         <p>{{post.publish}}</p>

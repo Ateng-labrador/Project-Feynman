@@ -3,21 +3,21 @@
 {% block content %}
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="/kalkulus" title="">
+            <a class="nav-link" href="/quizez" title="">
                 All-post
             </a>
         </li>
     {% for dataCategory in Categories %}
         <li class="nav-item">
-            <a class = "nav-link" href="/kalkulus/category/{{dataCategory.category}}">
-                {{dataCategory.category}}
+            <a class = "nav-link" href="/quizez/category/{{dataCategory.category}}">
+                #{{dataCategory.category}}
             </a>
         </li>
     {% endfor %}
     </ul>
 
     {% for post in Posts %}
-        <a href="/latihan/post/{{post.slug}}" title="">
+        <a href="/quizez/post/{{post.slug}}" title="">
             <h1>{{post.judul}}</h1>
         </a>
         <p>{{post.publish}}</p>

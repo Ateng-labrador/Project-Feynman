@@ -10,6 +10,15 @@ class QuizListView(ListView):
     template_name = 'quizez/index.html'
 
 
+def categoryPost(request, categoryInput):
+    posts = Quiz.objects.filter(categoryInput)
+    categories = Quiz.objects.values('category').distinct()
+    context = {
+        'Categories' : categories,
+        'Posts' : posts
+    }
+    return render(request, 'quizez/category.html', context)
+
 def quiz_view(request, pk):
     quiz = Quiz.objects.get(pk=pk)
     return render(request, 'quizez/single-post.html', {'obj' : quiz})

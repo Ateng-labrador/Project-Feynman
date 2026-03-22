@@ -19,7 +19,7 @@
     <p>Semua post di kategori : {{Posts}}</p>
 
     {% for post in Posts %}
-        <a href="/latihan/post/{{post.slug}}"><h1>{{post.judul}}</h1></a>
+        <a href="/kalkulus/post/{{post.slug}}"><h1>{{post.judul}}</h1></a>
         <p>{{post.publish}}</p>
         <p>{{post.publish | truncatechars:200}}</p>
     {% endfor %}
