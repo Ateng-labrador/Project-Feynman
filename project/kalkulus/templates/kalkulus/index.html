@@ -2,13 +2,15 @@
 
 {% block content %}
     {% for postf in Posts_front %}
-        <p>{{postf.intro}}</p>
+        <div style="white-space: pre-wrap;">
+            <p>{{postf.intro}}</p>
+        </div>
     {% endfor %}
 
     <ul class="nav">
         <li class="nav-item">
             <a class="nav-link" href="/kalkulus" title="">
-                All-post
+                Semua
             </a>
         </li>
     {% for dataCategory in Categories %}

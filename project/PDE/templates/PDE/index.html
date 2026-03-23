@@ -1,44 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
-        lobortis sapien, non accumsan nibh. Sed tempor quam posuere tincidunt accumsan.
-        Morbi lorem ex, blandit sed viverra quis, viverra scelerisque velit. Suspendisse
-        nec ligula sit amet magna tempor faucibus nec sit amet nisl. Proin iaculis ante
-        mauris, id lacinia lacus condimentum et. Aenean odio ante, accumsan vitae finibus
-        suscipit, lacinia sed nibh. Integer tristique libero sit amet enim consectetur
-        placerat. Integer fermentum auctor erat, ac tincidunt risus rutrum vitae. 
-        Vivamus sollicitudin porta sagittis. Nullam sed urna arcu. Curabitur finibus ac
-        orci quis aliquam. Nulla commodo enim vel venenatis ultricies. Nam posuere lorem
-        ipsum, id sollicitudin sapien facilisis et.</p>
-
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
-        lobortis sapien, non accumsan nibh. Sed tempor quam posuere tincidunt accumsan.
-        Morbi lorem ex, blandit sed viverra quis, viverra scelerisque velit. Suspendisse
-        nec ligula sit amet magna tempor faucibus nec sit amet nisl. Proin iaculis ante
-        mauris, id lacinia lacus condimentum et. Aenean odio ante, accumsan vitae finibus
-        suscipit, lacinia sed nibh. Integer tristique libero sit amet enim consectetur
-        placerat. Integer fermentum auctor erat, ac tincidunt risus rutrum vitae. 
-        Vivamus sollicitudin porta sagittis. Nullam sed urna arcu. Curabitur finibus ac
-        orci quis aliquam. Nulla commodo enim vel venenatis ultricies. Nam posuere lorem
-        ipsum, id sollicitudin sapien facilisis et.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
-        lobortis sapien, non accumsan nibh. Sed tempor quam posuere tincidunt accumsan.
-        Morbi lorem ex, blandit sed viverra quis, viverra scelerisque velit. Suspendisse
-        nec ligula sit amet magna tempor faucibus nec sit amet nisl. Proin iaculis ante
-        mauris, id lacinia lacus condimentum et. Aenean odio ante, accumsan vitae finibus
-        suscipit, lacinia sed nibh. Integer tristique libero sit amet enim consectetur
-        placerat. Integer fermentum auctor erat, ac tincidunt risus rutrum vitae. 
-        Vivamus sollicitudin porta sagittis. Nullam sed urna arcu. Curabitur finibus ac
-        orci quis aliquam. Nulla commodo enim vel venenatis ultricies. Nam posuere lorem
-        ipsum, id sollicitudin sapien facilisis et.</p>
+    {% for postf in Postsf %}
+        <div style="white-space: pre-wrap;">
+            <p>{{postf.intro}}</p>
+        </div>
+    {% endfor %}
 
     <ul class="nav">
         <li class="nav-item">
             <a class="nav-link" href="/latihan" title="">
-                All-post
+                Semua
             </a>
         </li>
     {% for dataCategory in Categories %}
@@ -52,11 +24,9 @@
 
 
     {% for post in Posts %}
-        <p><b>{{post.category}}</b></p>
         <a href="/latihan/post/{{post.slug}}" title="">
-            <h1>{{post.judul}}</h1>
+            <h4>{{post.judul}}</h4>
         </a>
-        <p>{{post.publish}}</p>
         <p>{{post.body| truncatechars:200}}</p>
     {% endfor %}
 {% endblock content %}

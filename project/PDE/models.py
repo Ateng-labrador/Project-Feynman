@@ -16,3 +16,10 @@ class Post(models.Model):
     
     def __str__(self):
         return "{}. {}".format(self.id, self.judul)
+
+class PostIntroduction(models.Model):
+    title = models.CharField(max_length=255)
+    intro = models.TextField()
+
+    def __str__(self):
+        return "{}. {}".format(self.id, self.title)

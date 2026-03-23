@@ -8,7 +8,7 @@ def index(request):
     posts_front = PostIntroduction.objects.all()
     categories = Post.objects.values('category').distinct()
     context = {
-        'judul' : 'Kalkulus - Ryman Project',
+        'judul' : 'Kalkulus - Feynman Project',
         'Categories' : categories,
         'Posts_front' : posts_front,
         'Posts': posts,
@@ -20,7 +20,7 @@ def categoryPost(request, categoryInput):
     posts = Post.objects.filter(category = categoryInput)
     categories = Post.objects.values('category').distinct()
     context = {
-        'judul' : 'Kalkulus - Ryman Project',
+        'judul' : 'Kalkulus - Feynman Project',
         'Categories' : categories,
         'Posts' : posts,
     }
@@ -31,7 +31,7 @@ def detailPost(request, slugInput):
     posts = Post.objects.get(slug=slugInput)
     categories = Post.objects.values('category').distinct()
     context = {
-        'judul' : 'Kalkulus - Rymann Project',
+        'judul' : 'Kalkulus - Feynman Project',
         'Categories' : categories,
         'Posts' : posts,
     }
