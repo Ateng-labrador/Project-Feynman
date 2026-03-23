@@ -24,7 +24,6 @@ urlpatterns = [
     path('ODE/', include('ODE.urls')),
     path('PDE/', include('PDE.urls')),
     path('kalkulus/', include('kalkulus.urls')),
-    path('latihan/', include('latihan.urls')),
     path('quizez/', include('quizez.urls', namespace='quizez')),
     path('', views.index),
 ]

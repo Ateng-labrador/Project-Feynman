@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+    {% for postf in Posts_front %}
+        <p>{{postf.intro}}</p>
+    {% endfor %}
+
     <ul class="nav">
         <li class="nav-item">
             <a class="nav-link" href="/kalkulus" title="">
@@ -14,15 +18,14 @@
             </a>
         </li>
     {% endfor %}
-    </ul>
+    </ul> 
 
 
     {% for post in Posts %}
-        <p><b>{{post.category}}</b></p>
         <a href="/kalkulus/post/{{post.slug}}" title="">
-            <h1>{{post.judul}}</h1>
+            <h4>{{post.judul}}</h4>
         </a>
-        <p>{{post.publish}}</p>
+        <!-- <p>{{post.publish}}</p> -->
         <p>{{post.body| truncatechars:200}}</p>
     {% endfor %}
 {% endblock content %}

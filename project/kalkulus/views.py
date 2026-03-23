@@ -1,14 +1,16 @@
 from django.shortcuts import render
 
 # Create your views here.
-from .models import Post
+from .models import Post, PostIntroduction
 
 def index(request):
     posts = Post.objects.all()
+    posts_front = PostIntroduction.objects.all()
     categories = Post.objects.values('category').distinct()
     context = {
         'judul' : 'Kalkulus - Ryman Project',
         'Categories' : categories,
+        'Posts_front' : posts_front,
         'Posts': posts,
     }
     return render(request, 'kalkulus/index.html', context)

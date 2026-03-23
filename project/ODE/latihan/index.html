@@ -7,7 +7,6 @@
                 All-post
             </a>
         </li>
-
     {% for dataCategory in Categories %}
         <li class="nav-item">
             <a class = "nav-link" href="/latihan/category/{{dataCategory.category}}">
@@ -26,10 +25,6 @@
         <p>{{post.publish}}</p>
         <p>{{post.body| truncatechars:200}}</p>
     {% endfor %}
-
-    <h1>{{ post.judul }}</h1>
-
-
 {% endblock content %}
 
 

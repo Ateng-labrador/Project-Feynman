@@ -9,6 +9,7 @@ class Post(models.Model):
     publish = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(blank=True, editable=False)
+    
 
     def save(self):
         self.slug = slugify(self.judul)
@@ -16,3 +17,10 @@ class Post(models.Model):
 
     def __str__(self):
         return "{}. {}".format(self.id, self.judul)
+
+class PostIntroduction(models.Model):
+    title = models.CharField(max_length=255, blank=False)
+    intro = models.TextField()
+
+    def __str__(self):
+        return "{}. {}".format(self.id, self.title)

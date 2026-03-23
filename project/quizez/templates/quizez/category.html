@@ -8,7 +8,6 @@
             General
         </a>
     </li>
-
     <!-- Topic dari database -->
     {% for cat in categories %}
         <li class="nav-item">
@@ -18,7 +17,6 @@
         </li>
     {% endfor %}
     </ul>
-
     {% for obj in posts %}
     <h3>
         <a href="{% url 'quizes:quiz-view' obj.pk %}">

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Post
+from .models import Post,PostIntroduction
 
 class PostAdmin(admin.ModelAdmin):
     readonly_fields = [
@@ -10,3 +10,4 @@ class PostAdmin(admin.ModelAdmin):
         'update',
     ]
 admin.site.register(Post)
+admin.site.register(PostIntroduction)
